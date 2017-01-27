@@ -19,7 +19,8 @@
 
 @property (strong, nonatomic) UICollectionView *movieCollectionView;
 @property (strong, nonatomic) UISegmentedControl * segmentedControl;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) UIRefreshControl *tableViewRefreshControl;
+@property (nonatomic, strong) UIRefreshControl *collectionViewRefreshControl;
 
 @property (strong, nonatomic) NSArray<MovieModel *> *movies;
 
@@ -66,19 +67,36 @@
     [segmentedControl addTarget:self action:@selector(segmentSelectionChanged:) forControlEvents: UIControlEventValueChanged];
     self.segmentedControl = segmentedControl;
     
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
     //add segmented control bar button item to navigation bar
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
     [self.navigationItem setRightBarButtonItem:barButtonItem];
     
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.movieTableView setContentOffset:CGPointMake(0, self.refreshControl.frame.size.height) animated:YES];
-    [self.refreshControl addTarget:self action:@selector(refreshMovieTableView) forControlEvents:UIControlEventValueChanged];
-    [self.movieTableView insertSubview:self.refreshControl atIndex:0];
+    
+    // Refresh Control for table view - tableViewRefreshControl
+    self.tableViewRefreshControl = [[UIRefreshControl alloc] init];
+    [self.movieTableView setContentOffset:CGPointMake(0, self.tableViewRefreshControl.frame.size.height) animated:YES];
+    [self.tableViewRefreshControl addTarget:self action:@selector(refreshMovieTableView) forControlEvents:UIControlEventValueChanged];
+    [self.movieTableView insertSubview:self.tableViewRefreshControl atIndex:0];
+    
+    
+    // Refresh Control for collection view - collectionViewRefreshControl
+    self.collectionViewRefreshControl = [[UIRefreshControl alloc] init];
+    [self.movieCollectionView setContentOffset:CGPointMake(0, self.collectionViewRefreshControl.frame.size.height) animated:YES];
+    [self.collectionViewRefreshControl addTarget:self action:@selector(refreshMovieCollectionView) forControlEvents:UIControlEventValueChanged];
+    [self.movieCollectionView insertSubview:self.collectionViewRefreshControl atIndex:0];
 
     [self fetchMovies];
 }
 
 - (void) refreshMovieTableView {
+    [self refreshAllViews: self.tableViewRefreshControl];
+}
+
+- (void) refreshMovieCollectionView {
+    [self refreshAllViews: self.collectionViewRefreshControl];
+}
+
+- (void) refreshAllViews: (UIRefreshControl*) refreshControl {
     NSString *apiKey = @"a07e22bc18f5cb106bfe4cc1f83ad8ed";
     NSString *urlString = [NSString stringWithFormat: @"https://api.themoviedb.org/3/movie/%@?api_key=%@", self.viewType,apiKey];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -87,7 +105,16 @@
                                                                                   NSURLResponse *response,
                                                                                   NSError *connectionError) {
         [self processMovieData: data connectionError: connectionError];
-        [self.refreshControl endRefreshing];
+        
+        // - Set last updated timestamp
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor purpleColor] 
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+        [refreshControl endRefreshing];
     }
     
     ] resume];
