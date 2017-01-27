@@ -21,21 +21,36 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle: [NSBundle bundleWithIdentifier: @"MovieController"]];
     
+    // --------------------------------------------------------------
     // Set up the Now Playing Movie View Controller
+    // --------------------------------------------------------------
+    //-- Step#1 : Create instance of Navigation Controller
+    UINavigationController *nowPlayingNavController = [storyBoard instantiateViewControllerWithIdentifier: @"movieNavigationController"];
+    //-- Step#2 : Create table view controller instance for now playing videos
     MovieViewController *nowPlayingMovieController = [storyBoard instantiateViewControllerWithIdentifier: @"MovieController"];
     nowPlayingMovieController.viewType = @"now_playing";
     nowPlayingMovieController.tabBarItem.title = @"Now Playing";
     nowPlayingMovieController.tabBarItem.image = [UIImage imageNamed:@"now_playing.png"];
+    //-- Step#3 : Add Now Playing controller to Nav controller
+    [nowPlayingNavController setViewControllers:@[nowPlayingMovieController]];
+
     
-    // Set up the Now Playing Movie View Controller
+    // --------------------------------------------------------------
+    // Set up the Top Rated Movie View Controller
+    // --------------------------------------------------------------
+    //-- Step#1 : Create instance of Navigation Controller
+    UINavigationController *topRatedNavController = [storyBoard instantiateViewControllerWithIdentifier: @"movieNavigationController"];
+    //-- Step#2 : Create table view controller instance for top rated videos
     MovieViewController *topRatedMovieController = [storyBoard instantiateViewControllerWithIdentifier: @"MovieController"];
     topRatedMovieController.viewType = @"top_rated";
     topRatedMovieController.tabBarItem.title = @"Top Rated";
     topRatedMovieController.tabBarItem.image = [UIImage imageNamed:@"top_rated.png"];
+    //-- Step#3 : Add Top Rated ontroller to Nav controller
+    [topRatedNavController setViewControllers:@[topRatedMovieController]];
     
-    
+    //-- Step#4 : TabBarController to have navigation controller
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:@[nowPlayingMovieController, topRatedMovieController]];
+    [tabBarController setViewControllers:@[nowPlayingNavController, topRatedNavController]];
     
     // Make the Tab Bar Controller the root view controller
     self.window.rootViewController = tabBarController;

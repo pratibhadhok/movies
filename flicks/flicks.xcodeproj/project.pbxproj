@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04DD9C6BF849EECAF9F2C2DE /* libPods-flicksTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F03B087DF6132550B1C58E5F /* libPods-flicksTests.a */; };
+		590733461E397C6A0058E3A0 /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590733451E397C6A0058E3A0 /* MovieDetailsViewController.m */; };
 		5910F0D61E37D46900545480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910F0D51E37D46900545480 /* main.m */; };
 		5910F0D91E37D46900545480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910F0D81E37D46900545480 /* AppDelegate.m */; };
 		5910F0DC1E37D46900545480 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910F0DB1E37D46900545480 /* MovieViewController.m */; };
@@ -16,6 +17,9 @@
 		5910F0E41E37D46900545480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5910F0E21E37D46900545480 /* LaunchScreen.storyboard */; };
 		5910F0EF1E37D46900545480 /* flicksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910F0EE1E37D46900545480 /* flicksTests.m */; };
 		5910F0FA1E37D46900545480 /* flicksUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910F0F91E37D46900545480 /* flicksUITests.m */; };
+		597988DF1E3A87CB00807202 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 597988DE1E3A87CB00807202 /* MovieCollectionViewCell.m */; };
+		597988E21E3ABA2400807202 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 597988E01E3ABA2400807202 /* grid.png */; };
+		597988E31E3ABA2400807202 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 597988E11E3ABA2400807202 /* list.png */; };
 		599124B21E37D8BA007A693A /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 599124B11E37D8BA007A693A /* MovieModel.m */; };
 		599124B51E37D9BB007A693A /* MovieItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599124B41E37D9BB007A693A /* MovieItemTableViewCell.m */; };
 		59EAF2631E37E8A9008DA57C /* now_playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 59EAF2611E37E8A9008DA57C /* now_playing.png */; };
@@ -44,6 +48,8 @@
 /* Begin PBXFileReference section */
 		1DE6936A3AFC8FD0F5723AAA /* libPods-flicksUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flicksUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35196F487A9E6AC6B1F36F6F /* Pods-flicksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flicksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flicksTests/Pods-flicksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		590733441E397C6A0058E3A0 /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
+		590733451E397C6A0058E3A0 /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
 		5910F0D11E37D46900545480 /* flicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5910F0D51E37D46900545480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5910F0D71E37D46900545480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +66,10 @@
 		5910F0F51E37D46900545480 /* flicksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flicksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5910F0F91E37D46900545480 /* flicksUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flicksUITests.m; sourceTree = "<group>"; };
 		5910F0FB1E37D46900545480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		597988DD1E3A87CB00807202 /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
+		597988DE1E3A87CB00807202 /* MovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionViewCell.m; sourceTree = "<group>"; };
+		597988E01E3ABA2400807202 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grid.png; path = ../../../../Downloads/grid.png; sourceTree = "<group>"; };
+		597988E11E3ABA2400807202 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = ../../../../Downloads/list.png; sourceTree = "<group>"; };
 		599124B01E37D8BA007A693A /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
 		599124B11E37D8BA007A693A /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
 		599124B31E37D9BB007A693A /* MovieItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieItemTableViewCell.h; sourceTree = "<group>"; };
@@ -141,17 +151,23 @@
 		5910F0D31E37D46900545480 /* flicks */ = {
 			isa = PBXGroup;
 			children = (
+				597988E01E3ABA2400807202 /* grid.png */,
+				597988E11E3ABA2400807202 /* list.png */,
 				59EAF2611E37E8A9008DA57C /* now_playing.png */,
 				59EAF2621E37E8A9008DA57C /* top_rated.png */,
 				5910F0D71E37D46900545480 /* AppDelegate.h */,
 				5910F0D81E37D46900545480 /* AppDelegate.m */,
 				5910F0DA1E37D46900545480 /* MovieViewController.h */,
 				5910F0DB1E37D46900545480 /* MovieViewController.m */,
+				597988DD1E3A87CB00807202 /* MovieCollectionViewCell.h */,
+				597988DE1E3A87CB00807202 /* MovieCollectionViewCell.m */,
 				599124B31E37D9BB007A693A /* MovieItemTableViewCell.h */,
 				599124B41E37D9BB007A693A /* MovieItemTableViewCell.m */,
 				599124B01E37D8BA007A693A /* MovieModel.h */,
 				599124B11E37D8BA007A693A /* MovieModel.m */,
 				5910F0DD1E37D46900545480 /* Main.storyboard */,
+				590733441E397C6A0058E3A0 /* MovieDetailsViewController.h */,
+				590733451E397C6A0058E3A0 /* MovieDetailsViewController.m */,
 				5910F0E01E37D46900545480 /* Assets.xcassets */,
 				5910F0E21E37D46900545480 /* LaunchScreen.storyboard */,
 				5910F0E51E37D46900545480 /* Info.plist */,
@@ -311,11 +327,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597988E31E3ABA2400807202 /* list.png in Resources */,
 				5910F0E41E37D46900545480 /* LaunchScreen.storyboard in Resources */,
 				59EAF2631E37E8A9008DA57C /* now_playing.png in Resources */,
 				59EAF2641E37E8A9008DA57C /* top_rated.png in Resources */,
 				5910F0E11E37D46900545480 /* Assets.xcassets in Resources */,
 				5910F0DF1E37D46900545480 /* Main.storyboard in Resources */,
+				597988E21E3ABA2400807202 /* grid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +500,9 @@
 				5910F0DC1E37D46900545480 /* MovieViewController.m in Sources */,
 				599124B51E37D9BB007A693A /* MovieItemTableViewCell.m in Sources */,
 				5910F0D91E37D46900545480 /* AppDelegate.m in Sources */,
+				590733461E397C6A0058E3A0 /* MovieDetailsViewController.m in Sources */,
 				5910F0D61E37D46900545480 /* main.m in Sources */,
+				597988DF1E3A87CB00807202 /* MovieCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
